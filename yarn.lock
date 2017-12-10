@@ -5134,7 +5134,7 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-static@^4.5.0:
+react-static@latest:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-static/-/react-static-4.5.0.tgz#9d24ec4f8782834aef143c6f44b33bffa876f4a1"
   dependencies:

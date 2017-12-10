@@ -1,6 +1,6 @@
 {
   "name": "react-static-example-basic",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -13,7 +13,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
-    "react-static": "^4.5.0"
+    "react-static": "latest"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
