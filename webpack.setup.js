@@ -1,15 +1,17 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 const SASS_INCLUDE_PATHS = ['src/']
+const extractSass = new ExtractTextPlugin({
+  filename: 'styles.[hash:8].css',
+  disable: process.env.NODE_ENV === 'development',
+})
+let alreadyIn = false
 
 export default (config, { stage, defaultLoaders }) => {
-  const extractSass = new ExtractTextPlugin({
-    filename: 'styles.[hash:8].css',
-    disable: stage === 'dev',
-  })
+  if (!alreadyIn) { alreadyIn = true } else { return config }
+  console.log('extractSass-', extractSass)
   config.module.rules = [{
     oneOf: [
-      defaultLoaders.jsLoader,
       {
         test: /\.s(a|c)ss$/,
         use: extractSass.extract({
@@ -29,6 +31,8 @@ export default (config, { stage, defaultLoaders }) => {
           ],
         }),
       },
+      defaultLoaders.jsLoader,
+      defaultLoaders.cssLoader,
       defaultLoaders.fileLoader,
     ],
   }]
