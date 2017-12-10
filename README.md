@@ -3,7 +3,7 @@
 Roadmap:
 
 - [x] Basic react-static [using basic example][2]
-- [ ] Custom routing [example][3]
+- [x] Custom routing [example][3]
 - [ ] Collocated routing [using this example][4]
 - [ ] Sass [kinda using this example][5]
 - [ ] Sass with MDC 
@@ -19,6 +19,6 @@ OR
 
 [1]: https://app.netlify.com/start/deploy?repository=https://github.com/talves/react-static-netlify-cms&amp;stack=cms
 [2]: https://github.com/nozzle/react-static/tree/master/examples/blank
-[3]: https://github.com/nozzle/react-static/tree/master/examples/blank
+[3]: https://github.com/nozzle/react-static/tree/master/examples/custom-routing
 [4]: https://github.com/talves/react-static-dynamic-menus
 [5]: https://github.com/nozzle/react-static/tree/master/examples/sass
