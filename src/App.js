@@ -3,7 +3,7 @@ import { Router, Route, Switch } from 'react-static'
 //
 import NotFound from 'containers/404'
 import menus from './menus'
-import './app.css'
+import './app.scss'
 
 export default () => (
   <Router>
