@@ -15,7 +15,7 @@ To get started, fork and clone this repository.
 
 OR
 
-[[Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][1]
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][1]
 
 [1]: https://app.netlify.com/start/deploy?repository=https://github.com/talves/react-static-netlify-cms&amp;stack=cms
 [2]: https://github.com/nozzle/react-static/tree/master/examples/blank
