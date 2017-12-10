@@ -1,0 +1,23 @@
+{
+  "menus": [
+    {
+      "name": "Home",
+      "componentName": "Home",
+      "route": "/",
+      "link": "/"
+    },
+    {
+      "name": "About Us",
+      "componentName": "About",
+      "route": "/en/about",
+      "link": "/en/about/"
+    },
+    {
+      "name": "Posts",
+      "componentName": "Blog",
+      "route": "/blog",
+      "childroute": "/post",
+      "link": "/blog/"
+    }
+  ]
+}
