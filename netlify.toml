@@ -1,0 +1,8 @@
+# Global settings applied to the whole site.
+[build]
+  command = "yarn build:data && yarn build"
+  publish = "dist"
+
+# build a preview of the site (TODO: Drafts and Future dates also)
+# [context.deploy-preview]
+#   command = "yarn build:data && yarn build:preview"

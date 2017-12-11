@@ -43,5 +43,6 @@ export default (config, { defaultLoaders }) => {
       defaultLoaders.fileLoader,
     ],
   }]
+  config.target = 'web' // We are targeting the web
   return config
 }
