@@ -29,3 +29,15 @@ a:not(.mdc-button) {
 .post-link {
   padding: 10px;
 }
+
+/* code */
+pre>code {
+  display: block;
+  padding: 15px;
+  overflow: auto;
+  font-size: 1em;
+  line-height: 1.4em;
+  border-radius: 0.2em;
+  @include mdc-theme-prop(background-color, text-hint-on-background);
+  @include mdc-theme-prop(color, text-primary-on-light);
+}
