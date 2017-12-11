@@ -14,7 +14,7 @@ const routers = {
   Home: { router: homeRouter },
   About: { router: aboutRouter },
   Blog: { router: blogRouter },
-  Theme: { router: themesRouter },
+  ThemeColors: { router: themesRouter },
 }
 
 export default {
