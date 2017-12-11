@@ -16,6 +16,13 @@
       "display": true
     },
     {
+      "name": "Documentation",
+      "componentName": "Docs",
+      "route": "/docs",
+      "link": "/docs/",
+      "display": true
+    },
+    {
       "name": "Theme",
       "componentName": "ThemeColors",
       "route": "/theme",
