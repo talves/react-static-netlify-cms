@@ -7,7 +7,7 @@ Roadmap:
 - [x] Collocated routing [using this example][4]
 - [x] Sass [kinda using this example][5]
 - [x] Sass with [MDC][6] using James Friedman's [RMWC][7]
-- [ ] Using Markdown to add Docs
+- [x] Using Markdown to add Docs (pre-processed into data on build)
 - [ ] Netlify CMS to update Docs (Final)
 
 
