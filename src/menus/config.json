@@ -4,20 +4,30 @@
       "name": "Home",
       "componentName": "Home",
       "route": "/",
-      "link": "/"
-    },
-    {
-      "name": "About Us",
-      "componentName": "About",
-      "route": "/en/about",
-      "link": "/en/about/"
+      "link": "/",
+      "display": false
     },
     {
       "name": "Posts",
       "componentName": "Blog",
       "route": "/blog",
       "childroute": "/post",
-      "link": "/blog/"
+      "link": "/blog/",
+      "display": true
+    },
+    {
+      "name": "Theme",
+      "componentName": "ThemeColors",
+      "route": "/theme",
+      "link": "/theme/",
+      "display": true
+    },
+    {
+      "name": "About Us",
+      "componentName": "About",
+      "route": "/en/about",
+      "link": "/en/about/",
+      "display": true
     }
   ]
 }
