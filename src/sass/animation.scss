@@ -1,0 +1,21 @@
+.demo-card--animation {
+  @include mdc-elevation(1);
+  @include mdc-elevation-transition;
+
+  &--fast-transitions {
+    transition: mdc-elevation-transition-rule(180ms);
+  }
+
+  &--default-ease-transitions {
+    transition: mdc-elevation-transition-rule($mdc-elevation-transition-duration, ease);
+  }
+
+  &:focus {
+    @include mdc-elevation(2);
+  }
+
+  &:hover {
+    @include mdc-elevation(10);
+    cursor: pointer;
+  }
+}
