@@ -1,0 +1,73 @@
+@import "@material/ripple/mdc-ripple";
+
+/*    Ripple
+      @import "@material/ripple/mixins"; */
+#test-ripple {
+  @include mdc-ripple-base;
+  @include mdc-ripple-bg((pseudo: "::before"));
+  @include mdc-ripple-fg((pseudo: "::after"));
+
+  /* "Bound" the ripple, preventing the pseudo-elements from bleeding out of the box. */
+  overflow: hidden;
+}
+
+.mdc-test-anim-opacity {
+  cursor: pointer;
+  transition: mdc-animation-exit(/* $name: */ opacity, /* $duration: */ 175ms, /* $delay: */ 150ms);
+  opacity: 1;
+  will-change: opacity;
+
+  &:active {
+    transition: mdc-animation-enter(opacity, 475ms /*, $delay: 0ms by default */);
+    opacity: 0.2;
+  }
+}
+.mdc-test-anim-height {
+  cursor: pointer;
+  transition: mdc-animation-exit(/* $name: */ height, /* $duration: */ 175ms, /* $delay: */ 150ms);
+  height: 200px;
+  will-change: height;
+  z-index: 10;
+
+  &:hover {
+      transition: mdc-animation-enter(height, 875ms /*, $delay: 0ms by default */);
+      height: 100px;
+  }
+}
+.mdc-test-anim-margin {
+  cursor: pointer;
+  transition: mdc-animation-exit(/* $name: */ margin, /* $duration: */ 175ms, /* $delay: */ 150ms);
+  margin: 2px;
+  will-change: margin;
+
+  &:hover {
+      transition: mdc-animation-enter(margin, 675ms /*, $delay: 0ms by default */);
+      margin: 100px;
+  }
+}
+.mdc-test-anim-padding {
+  cursor: pointer;
+  transition: mdc-animation-exit(/* $name: */ padding, /* $duration: */ 675ms, /* $delay: */ 150ms);
+  padding: 2px;
+  will-change: padding;
+  max-width: 600px;
+
+  &:hover {
+      transition: mdc-animation-enter(padding, 675ms /*, $delay: 0ms by default */);
+      padding: 20px;
+  }
+}
+
+.mdc-test-anim-width {
+  cursor: pointer;
+  transition: mdc-animation-exit(/* $name: */ width, /* $duration: */ 175ms, /* $delay: */ 150ms);
+  width: 500px;
+  will-change: width;
+  z-index: 10;
+
+  &:hover {
+      transition: mdc-animation-enter(width, 875ms /*, $delay: 0ms by default */);
+      width: 250px;
+  }
+}
+

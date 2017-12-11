@@ -1,6 +1,10 @@
 
 import React from 'react'
 import { getRouteProps, Switch, Route, Link } from 'react-static'
+import { Grid, GridCell, GridInner } from 'rmwc/Grid'
+import { List, ListItem, ListItemStartDetail, ListItemText } from 'rmwc/List'
+import { Elevation } from 'rmwc/Elevation'
+import { Typography } from 'rmwc/Typography'
 //
 import Post, { router as postRouter } from './Post'
 
@@ -12,29 +16,45 @@ const getProps = () => ({
 })
 
 export default getRouteProps(({ match, posts }) => (
-  <div>
+  <Grid>
     <Switch>
       <Route
         path={match.url}
         exact
         render={() => (
-          <div>
-            <h1>It's blog time.</h1>
-            <br />
-            All Posts:
-            <ul>
-              {posts.map(post => (
-                <li key={post.id}>
-                  <Link to={`${path}${childPath}/${post.id}/`}>{post.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <GridCell span="12">
+            <GridInner>
+              <GridCell span="3" />
+              <GridCell span="6"><Typography tag="h1" style={{ textAlign: 'center' }} use="display2">It's blog time.</Typography></GridCell>
+              <GridCell span="3" />
+              <GridCell span="3" />
+              <GridCell span="6"><Typography tag="h1" use="Headline">All Posts:</Typography></GridCell>
+              <GridCell span="3" />
+              <GridCell span="3" />
+              <GridCell span="6">
+                {posts.map(post => (
+                  <List key={post.id}>
+                    <Link to={`${path}${childPath}/${post.id}/`}>
+                      <Elevation z={6}>
+                        <ListItem ripple>
+                          <ListItemStartDetail>bookmark_outline</ListItemStartDetail>
+                          <ListItemText>
+                            <Typography className="post-link" tag="div" use="Headline">{post.id} {post.title}</Typography>
+                          </ListItemText>
+                        </ListItem>
+                      </Elevation>
+                    </Link>
+                  </List>
+                ))}
+              </GridCell>
+              <GridCell span="3" />
+            </GridInner>
+          </GridCell>
         )}
       />
       <Route path={`${match.url}${childPath}/:postID/`} component={Post} />
     </Switch>
-  </div>
+  </Grid>
 ))
 
 export const router = {

@@ -1,13 +1,16 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-const SASS_INCLUDE_PATHS = ['src/']
+const SASS_INCLUDE_PATHS = ['src/', 'node_modules/']
 
 let sassUse = []
 if (process.env.NODE_ENV === 'development') {
   sassUse = [
     { loader: 'style-loader' },
     { loader: 'css-loader' },
-    { loader: 'sass-loader' },
+    {
+      loader: 'sass-loader',
+      options: { includePaths: SASS_INCLUDE_PATHS },
+    },
   ]
 } else {
   sassUse = ExtractTextPlugin.extract({

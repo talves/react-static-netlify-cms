@@ -1,0 +1,31 @@
+/* Browser Hacks */
+main {
+  display: block;
+}
+
+/* Body */
+body {
+  font-family: $sans-serif-font;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+a:not(.mdc-button) {
+  @include mdc-theme-prop(color, primary-dark);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+::selection {
+  background: $mdc-theme-primary-light;
+  // @include mdc-theme-prop(background, secondary-light); Edge bug using var
+}
+::-moz-selection {
+  @include mdc-theme-prop(background, secondary-light);
+}
+
+.post-link {
+  padding: 10px;
+}

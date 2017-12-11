@@ -1,19 +1,25 @@
 import React from 'react'
-import { Router, Route, Switch } from 'react-static'
+import { Router, Route, Switch, Link } from 'react-static'
+import { Toolbar, ToolbarRow, ToolbarTitle, ToolbarSection } from 'rmwc/Toolbar'
 //
 import NotFound from 'containers/404'
 import menus from './menus'
-import './app.scss'
+import './sass/app.scss'
 
 export default () => (
   <Router>
     <div>
-      <nav>
-        { menus.navigation }
-      </nav>
+      <Toolbar>
+        <ToolbarRow>
+          <ToolbarTitle><Link className="mdc-button mdc-theme--text-primary-on-primary" to="/" >React-Static Site</Link></ToolbarTitle>
+          <ToolbarSection alignEnd>
+            {menus.navigation}
+          </ToolbarSection>
+        </ToolbarRow>
+      </Toolbar>
       <div className="content">
         <Switch>
-          { menus.content }
+          {menus.content}
           <Route component={NotFound} />
         </Switch>
       </div>
