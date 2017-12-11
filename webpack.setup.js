@@ -1,21 +1,14 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 const SASS_INCLUDE_PATHS = ['src/']
-const extractSass = new ExtractTextPlugin({
-  filename: 'styles.[hash:8].css',
-  disable: process.env.NODE_ENV === 'development',
-  allChunks: true,
-})
-let alreadyIn = false
-let sassUse
+
+let sassUse = []
 if (process.env.NODE_ENV === 'development') {
-  sassUse = [{
-    loader: 'style-loader', // creates style nodes from JS strings
-  }, {
-    loader: 'css-loader', // translates CSS into CommonJS
-  }, {
-    loader: 'sass-loader', // compiles Sass to CSS
-  }]
+  sassUse = [
+    { loader: 'style-loader' },
+    { loader: 'css-loader' },
+    { loader: 'sass-loader' },
+  ]
 } else {
   sassUse = ExtractTextPlugin.extract({
     use: [
@@ -35,9 +28,7 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-export default (config, { stage, defaultLoaders }) => {
-  // react-static is loading this config twice, but not needed
-  if (!alreadyIn) { alreadyIn = true } else { return config }
+export default (config, { defaultLoaders }) => {
   config.module.rules = [{
     oneOf: [
       {
@@ -46,11 +37,8 @@ export default (config, { stage, defaultLoaders }) => {
       },
       defaultLoaders.cssLoader,
       defaultLoaders.jsLoader,
-    ],
-    rules: [
       defaultLoaders.fileLoader,
     ],
   }]
-  if (stage === 'dev') config.plugins.push(extractSass)
   return config
 }
