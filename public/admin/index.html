@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+
+  <title>This is an example</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/admin/cms.css"/>
+</head>
+<body>
+
+  <script src='/admin/cms.js'></script>
+  <script>
+    var DocumentPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('div', {},
+          h('div', {className: "mdc-card"},
+            h('div', {className: "mdc-card__primary"},
+              h('h1', {className: " mdc-card__title mdc-card__title--large"}, 
+                h('span', {className: " mdc-card__title mdc-card__title--large"}, entry.getIn(['data', 'title']))
+              ),
+            );
+            h('div', {className: "mdc-card__supporting-text"},
+              h('div', {"className": "text"}, this.props.widgetFor('body'))
+            );
+          );
+        );
+        }
+    });
+
+    CMS.registerPreviewTemplate("docs", DocumentPreview);
+    CMS.registerPreviewStyle("/admin/site.css");
+    CMS.registerEditorComponent({
+      id: "youtube",
+      label: "Youtube",
+      fields: [{name: 'id', label: 'Youtube Video ID'}],
+      pattern: /^{{<\s?youtube (\S+)\s?>}}/,
+      fromBlock: function(match) {
+        return {
+          id: match[1]
+        };
+      },
+      toBlock: function(obj) {
+        return '{{< youtube ' + obj.id + ' >}}';
+      },
+      toPreview: function(obj) {
+        return (
+          '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+        );
+      }
+    });
+  </script>
+</body>
+</html>
