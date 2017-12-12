@@ -6,6 +6,7 @@ import { Elevation } from 'rmwc/Elevation'
 //
 import logoImg from '../images/logo.png'
 import logoMDCImg from '../images/material-components-logo.svg'
+import logoCMSImg from '../images/netlify-cms-logo.svg'
 
 let path = '/'
 
@@ -13,6 +14,9 @@ export default getSiteProps(() => (
   <Grid>
     <GridCell span="2" />
     <GridCell span="8"><Typography tag="h1" style={{ textAlign: 'center' }} use="display2">Welcome to</Typography></GridCell>
+    <GridCell span="2" />
+    <GridCell span="2" />
+    <GridCell span="8"><img className="nc-Page-logo" src={logoCMSImg} alt="Netlify CMS" /></GridCell>
     <GridCell span="2" />
     <GridCell span="2" />
     <GridCell span="8"><img style={Object.assign({}, { height: 'auto', width: '100%' })} src={logoImg} alt="" /></GridCell>
