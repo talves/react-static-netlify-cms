@@ -41,3 +41,11 @@ pre>code {
   @include mdc-theme-prop(background-color, text-hint-on-background);
   @include mdc-theme-prop(color, text-primary-on-light);
 }
+
+.nc-Page-logo {
+  color: #c4c6d2;
+  @include mdc-theme-prop(background-color, text-hint-on-background);
+  padding: 40px;
+  height: 'auto';
+  width: 90%;
+}
