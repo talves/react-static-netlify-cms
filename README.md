@@ -8,7 +8,7 @@ Roadmap:
 - [x] Sass [kinda using this example][5]
 - [x] Sass with [MDC][6] using James Friedman's [RMWC][7]
 - [x] Using Markdown to add Docs (pre-processed into data on build)
-- [ ] Netlify CMS to update Docs (Final)
+- [x] Netlify CMS to update Docs (Final) [React-Static-Netlify-CMS][8]
 
 
 To get started, fork and clone this repository.
@@ -24,3 +24,4 @@ OR
 [5]: https://github.com/nozzle/react-static/tree/master/examples/sass
 [6]: https://material.io/components/web/
 [7]: https://github.com/jamesmfriedman/rmwc
+[8]: https://github.com/talves/react-static-netlify-cms
