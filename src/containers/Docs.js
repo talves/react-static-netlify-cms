@@ -2,7 +2,6 @@ import React from 'react'
 import { getRouteProps, Switch, Route, Link } from 'react-static'
 import { Grid, GridCell, GridInner } from 'rmwc/Grid'
 import { List, ListItem, ListItemStartDetail, ListItemText, ListItemEndDetail } from 'rmwc/List'
-import { IconToggle } from 'rmwc/IconToggle'
 import { Elevation } from 'rmwc/Elevation'
 import { Icon } from 'rmwc/Icon'
 import { Typography } from 'rmwc/Typography'
@@ -31,8 +30,8 @@ export default getRouteProps(({ match, docs }) => (
               <GridCell span="3" />
               <GridCell span="6">
                 {docs.map(item => (
-                  <List key={item.data.path}>
-                    <Link to={`${path}/${item.data.path}/`}>
+                  <List key={item.data.slug}>
+                    <Link to={`${path}/${item.data.slug}/`}>
                       <Elevation style={{ padding: '10px' }} z={6}>
                         <ListItem ripple>
                           <ListItemStartDetail><Icon>book</Icon></ListItemStartDetail>
@@ -64,7 +63,7 @@ export const router = {
     return {
       path,
       getProps,
-      children: documentation.map(item => (docsRouter.route({ route: `${item.data.path}`, parentroute: path }, item))),
+      children: documentation.map(item => (docsRouter.route({ route: `${item.data.slug}`, parentroute: path }, item))),
     }
   },
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { getRouteProps, Link } from 'react-static'
 import { GridCell } from 'rmwc/Grid'
-import { Icon } from 'rmwc/Icon'
 import {
   Card,
   CardSupportingText,
@@ -13,7 +12,7 @@ import {
 import { Typography } from 'rmwc/Typography'
 //
 
-let path = '/document' // default and must be overwritten, see router.route.path here
+let path = '/document' // default and must be overwritten, see router.route.slug here
 let returnUri = '/docs/' // default
 
 export default getRouteProps(({ item }) => (
@@ -35,7 +34,7 @@ export default getRouteProps(({ item }) => (
 
 export const router = {
   route: (config, item) => {
-    path = (item.data.path) ? item.data.path : `${path}-${Math.random()}`
+    path = (item.data.slug) ? item.data.slug : `${path}-${Math.random()}`
     returnUri = (config && config.parentroute) ? `${config.parentroute}/` : returnUri
 
     return {
