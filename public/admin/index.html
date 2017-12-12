@@ -17,9 +17,10 @@
       render: function() {
         var entry = this.props.entry;
         var image = entry.getIn(['data', 'image']);
+        var imageContainer = (image) ? h('section', {className: "mdc-card__media", style: `background-image: url(${image}); height: 20rem;`},) : h('');
         return h('div', {},
           h('div', {className: "mdc-card"},
-            image ? h('section', {className: "mdc-card__media", style: `background-image: url(${image}); height: 20rem;`},) : null,
+            imageContainer,
             h('div', {className: "mdc-card__primary"},
               h('h1', {className: " mdc-card__title mdc-card__title--large"}, 
                 h('span', {className: " mdc-card__title mdc-card__title--large"}, entry.getIn(['data', 'title']))
