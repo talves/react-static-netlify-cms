@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-
+  branch: netlify-cms # Branch to update (optional; defaults to master)
+  
 display_url: https://react-static-cms.netlify.com
 media_folder: "public/images"
 public_folder: "images"
