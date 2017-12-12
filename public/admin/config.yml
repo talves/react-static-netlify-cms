@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+
+display_url: https://react-static-cms.netlify.com
+media_folder: "public/images"
+public_folder: "images"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "docs" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Document" # Used in the UI, ie.: "New Post"
+    description: >
+      This is a very simple collection of documentation information.
+    folder: "documentation"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Content", name: "body", widget: "markdown"}
