@@ -1,6 +1,6 @@
 ---
 title: 'Quick Start for RMWC'
-path: 'quick-start-rmwc'
+slug: 'quick-start-rmwc'
 ---
 
 # Quick Start

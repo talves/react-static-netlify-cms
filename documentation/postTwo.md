@@ -1,6 +1,6 @@
 ---
 title: "Buttons Component"
-path: "button-rmwc"
+slug: "button-rmwc"
 ---
 
 # Buttons
