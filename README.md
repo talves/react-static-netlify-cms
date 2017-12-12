@@ -10,12 +10,13 @@ Roadmap:
 - [x] Using Markdown to add Docs (pre-processed into data on build)
 - [x] Netlify CMS to update Docs (Final) [React-Static-Netlify-CMS][8]
 
+You can see a [Demo of the final site][9]
 
-To get started, fork and clone this repository.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][1]
 
 OR
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][1]
+[Fork the Github repository][8]
 
 [1]: https://app.netlify.com/start/deploy?repository=https://github.com/talves/react-static-netlify-cms&amp;stack=cms
 [2]: https://github.com/nozzle/react-static/tree/master/examples/blank
@@ -25,3 +26,4 @@ OR
 [6]: https://material.io/components/web/
 [7]: https://github.com/jamesmfriedman/rmwc
 [8]: https://github.com/talves/react-static-netlify-cms
+[9]: https://react-static-cms.netlify.com/
