@@ -17,7 +17,7 @@
       render: function() {
         var entry = this.props.entry;
         var image = entry.getIn(['data', 'image']);
-        var imageContainer = (image) ? h('section', {className: "mdc-card__media", style: {backgroundImage: `url(${image})`, height: '20rem'}},) : h('');
+        var imageContainer = (image) ? h('section', {className: "mdc-card__media", style: {backgroundImage: `url(${image})`, height: '20rem'}},) : h('div');
         return h('div', {},
           h('div', {className: "mdc-card"},
             imageContainer,
