@@ -32,12 +32,12 @@ export default {
     />
   )),
   routes: async () => {
-    const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const { data: books } = await axios.get('https://www.googleapis.com/books/v1/volumes?q=harry+potter&maxResults=40')
     return config.menus.map(menu => {
       let route
       switch (menu.componentName) {
         case 'Blog':
-          route = routers[menu.componentName].router.route(menu, posts)
+          route = routers[menu.componentName].router.route(menu, books.items)
           break
         case 'Docs':
           route = routers[menu.componentName].router.route(menu, documentation)

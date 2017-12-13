@@ -22,11 +22,12 @@ export default getRouteProps(({ post }) => (
         <CardActions>
           <Link tag="a" className="mdc-button mdc-button--stroked mdc-theme--primary mdc-ripple-upgraded" to={returnUri}>{'<'} Back</Link>
         </CardActions>
-        <CardTitle large><Typography style={{ textAlign: 'center' }} use="display2">{post.title}</Typography></CardTitle>
+        <CardTitle large><Typography style={{ textAlign: 'center' }} use="display2">{post.volumeInfo.title}</Typography></CardTitle>
         <CardSubtitle />
       </CardPrimary>
       <CardSupportingText>
-        <p>{post.body}</p>
+        <h2>{post.volumeInfo.authors[0]}</h2>
+        <p>{post.volumeInfo.description}</p>
       </CardSupportingText>
     </Card>
   </GridCell>

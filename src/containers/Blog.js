@@ -39,7 +39,7 @@ export default getRouteProps(({ match, posts }) => (
                         <ListItem ripple>
                           <ListItemStartDetail><Icon>bookmark_outline</Icon></ListItemStartDetail>
                           <ListItemText>
-                            <Typography className="post-link" tag="div" use="Headline">{post.id} {post.title}</Typography>
+                            <Typography className="post-link" tag="div" use="Headline">{post.volumeInfo.authors[0]} - {post.volumeInfo.title}</Typography>
                           </ListItemText>
                         </ListItem>
                       </Elevation>
