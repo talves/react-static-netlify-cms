@@ -9,7 +9,7 @@ import './sass/app.scss'
 export default () => (
   <Router>
     <div>
-      <Toolbar>
+      <Toolbar fixed>
         <ToolbarRow>
           <ToolbarTitle><Link className="mdc-button mdc-theme--text-primary-on-primary" to="/" >React-Static Site</Link></ToolbarTitle>
           <ToolbarSection alignEnd>
@@ -17,7 +17,7 @@ export default () => (
           </ToolbarSection>
         </ToolbarRow>
       </Toolbar>
-      <div className="content">
+      <div className="content mdc-toolbar-fixed-adjust">
         <Switch>
           {menus.content}
           <Route component={NotFound} />
