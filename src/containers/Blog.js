@@ -1,7 +1,7 @@
 import React from 'react'
 import { getRouteProps, Switch, Route, Link } from 'react-static'
 import { Grid, GridCell, GridInner } from 'rmwc/Grid'
-import { List, ListItem, ListItemStartDetail, ListItemText } from 'rmwc/List'
+import { List, ListItem, ListItemGraphic, ListItemText } from 'rmwc/List'
 import { Elevation } from 'rmwc/Elevation'
 import { Icon } from 'rmwc/Icon'
 import { Typography } from 'rmwc/Typography'
@@ -37,7 +37,7 @@ export default getRouteProps(({ match, posts }) => (
                     <Link to={`${path}${childPath}/${post.id}/`}>
                       <Elevation style={{ padding: '10px' }} z={6}>
                         <ListItem ripple>
-                          <ListItemStartDetail><Icon>bookmark_outline</Icon></ListItemStartDetail>
+                          <ListItemGraphic><Icon>bookmark_outline</Icon></ListItemGraphic>
                           <ListItemText>
                             <Typography className="post-link" tag="div" use="Headline">{post.volumeInfo.authors[0]} - {post.volumeInfo.title}</Typography>
                           </ListItemText>

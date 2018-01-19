@@ -1,7 +1,7 @@
 import React from 'react'
 import { getRouteProps, Switch, Route, Link } from 'react-static'
 import { Grid, GridCell, GridInner } from 'rmwc/Grid'
-import { List, ListItem, ListItemStartDetail, ListItemText, ListItemEndDetail } from 'rmwc/List'
+import { List, ListItem, ListItemGraphic, ListItemText, ListItemMeta } from 'rmwc/List'
 import { Elevation } from 'rmwc/Elevation'
 import { Icon } from 'rmwc/Icon'
 import { Typography } from 'rmwc/Typography'
@@ -34,11 +34,11 @@ export default getRouteProps(({ match, docs }) => (
                     <Link to={`${path}/${item.data.slug}/`}>
                       <Elevation style={{ padding: '10px' }} z={6}>
                         <ListItem ripple>
-                          <ListItemStartDetail><Icon>book</Icon></ListItemStartDetail>
+                          <ListItemGraphic><Icon>book</Icon></ListItemGraphic>
                           <ListItemText>
                             <Typography className="post-link" tag="div" use="Headline">{item.data.title}</Typography>
                           </ListItemText>
-                          <ListItemEndDetail><Icon>info</Icon></ListItemEndDetail>
+                          <ListItemMeta><Icon>info</Icon></ListItemMeta>
                         </ListItem>
                       </Elevation>
                     </Link>
