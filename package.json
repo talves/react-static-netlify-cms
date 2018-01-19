@@ -15,7 +15,7 @@
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-static": "latest",
-    "rmwc": "1.0.0"
+    "rmwc": "^1.0.2"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
