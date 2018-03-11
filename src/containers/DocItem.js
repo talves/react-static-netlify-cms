@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRouteProps, Link } from 'react-static'
+import { withRouteData, Link } from 'react-static'
 import { GridCell } from 'rmwc/Grid'
 import {
   Card,
@@ -16,7 +16,7 @@ import DocImage from './DocImage'
 let path = '/document' // default and must be overwritten, see router.route.slug here
 let returnUri = '/docs/' // default
 
-export default getRouteProps(({ item }) => (
+export default withRouteData(({ item }) => (
   <GridCell span="12">
     <Card>
       <DocImage src={item.data.image} />
@@ -41,7 +41,7 @@ export const router = {
 
     return {
       path,
-      getProps: () => ({
+      getData: () => ({
         item,
       }),
     }

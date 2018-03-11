@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSiteProps } from 'react-static'
+import { withSiteData } from 'react-static'
 import { Grid, GridCell } from 'rmwc/Grid'
 import { Typography } from 'rmwc/Typography'
 import { Elevation } from 'rmwc/Elevation'
@@ -10,7 +10,7 @@ import logoCMSImg from '../images/netlify-cms-logo.svg'
 
 let path = '/'
 
-export default getSiteProps(() => (
+export default withSiteData(() => (
   <Grid>
     <GridCell span="2" />
     <GridCell span="8"><Typography tag="h1" style={{ textAlign: 'center' }} use="display2">Welcome to</Typography></GridCell>

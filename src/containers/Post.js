@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRouteProps, Link } from 'react-static'
+import { withRouteData, Link } from 'react-static'
 import { GridCell } from 'rmwc/Grid'
 import {
   Card,
@@ -15,7 +15,7 @@ import { Typography } from 'rmwc/Typography'
 let path = '/post/00'
 let returnUri = '/blog/'
 
-export default getRouteProps(({ post }) => (
+export default withRouteData(({ post }) => (
   <GridCell span="12">
     <Card>
       <CardPrimary>
@@ -40,7 +40,7 @@ export const router = {
 
     return {
       path,
-      getProps: () => ({
+      getData: () => ({
         post,
       }),
     }

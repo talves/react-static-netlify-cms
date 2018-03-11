@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRouteProps, Switch, Route, Link } from 'react-static'
+import { withRouteData, Switch, Route, Link } from 'react-static'
 import { Grid, GridCell, GridInner } from 'rmwc/Grid'
 import { List, ListItem, ListItemGraphic, ListItemText } from 'rmwc/List'
 import { Elevation } from 'rmwc/Elevation'
@@ -11,11 +11,11 @@ import Post, { router as postRouter } from './Post'
 let path = '/blog'
 let childPath = '/post'
 let posts = []
-const getProps = () => ({
+const getData = () => ({
   posts,
 })
 
-export default getRouteProps(({ match, posts }) => (
+export default withRouteData(({ match, posts }) => (
   <Grid>
     <Switch>
       <Route
@@ -65,7 +65,7 @@ export const router = {
 
     return {
       path,
-      getProps,
+      getData,
       children: posts.map(post => (postRouter.route({ route: `${childPath}/${post.id}`, parentroute: path }, post))),
     }
   },

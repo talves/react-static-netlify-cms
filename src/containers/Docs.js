@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRouteProps, Switch, Route, Link } from 'react-static'
+import { withRouteData, Switch, Route, Link } from 'react-static'
 import { Grid, GridCell, GridInner } from 'rmwc/Grid'
 import { List, ListItem, ListItemGraphic, ListItemText, ListItemMeta } from 'rmwc/List'
 import { Elevation } from 'rmwc/Elevation'
@@ -10,11 +10,11 @@ import DocItem, { router as docsRouter } from './DocItem'
 
 let path = '/docs'
 let docs = []
-const getProps = () => ({
+const getData = () => ({
   docs,
 })
 
-export default getRouteProps(({ match, docs }) => (
+export default withRouteData(({ match, docs }) => (
   <Grid>
     <Switch>
       <Route
@@ -62,7 +62,7 @@ export const router = {
 
     return {
       path,
-      getProps,
+      getData,
       children: documentation.map(item => (docsRouter.route({ route: `${item.data.slug}`, parentroute: path }, item))),
     }
   },
