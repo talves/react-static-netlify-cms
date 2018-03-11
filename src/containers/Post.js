@@ -3,10 +3,7 @@ import { withRouteData, Link } from 'react-static'
 import { GridCell } from 'rmwc/Grid'
 import {
   Card,
-  CardSupportingText,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
+  CardPrimaryAction,
   CardActions,
 } from 'rmwc/Card'
 import { Typography } from 'rmwc/Typography'
@@ -18,17 +15,16 @@ let returnUri = '/blog/'
 export default withRouteData(({ post }) => (
   <GridCell span="12">
     <Card>
-      <CardPrimary>
+      <CardPrimaryAction>
         <CardActions>
           <Link tag="a" className="mdc-button mdc-button--stroked mdc-theme--primary mdc-ripple-upgraded" to={returnUri}>{'<'} Back</Link>
         </CardActions>
-        <CardTitle large><Typography style={{ textAlign: 'center' }} use="display2">{post.volumeInfo.title}</Typography></CardTitle>
-        <CardSubtitle />
-      </CardPrimary>
-      <CardSupportingText>
+      </CardPrimaryAction>
+      <Typography style={{ textAlign: 'center' }} use="display2">{post.volumeInfo.title}</Typography>
+      <Typography style={{ padding: '30px' }}>
         <h2>{post.volumeInfo.authors[0]}</h2>
         <p>{post.volumeInfo.description}</p>
-      </CardSupportingText>
+      </Typography>
     </Card>
   </GridCell>
 ))

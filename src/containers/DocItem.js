@@ -3,9 +3,7 @@ import { withRouteData, Link } from 'react-static'
 import { GridCell } from 'rmwc/Grid'
 import {
   Card,
-  CardSupportingText,
-  CardPrimary,
-  CardTitle,
+  CardPrimaryAction,
   CardSubtitle,
   CardActions,
 } from 'rmwc/Card'
@@ -19,17 +17,16 @@ let returnUri = '/docs/' // default
 export default withRouteData(({ item }) => (
   <GridCell span="12">
     <Card>
-      <DocImage src={item.data.image} />
-      <CardPrimary>
-        <CardActions>
-          <Link tag="a" className="mdc-button mdc-button--stroked mdc-theme--primary mdc-ripple-upgraded" to={returnUri}>{'<'} Back</Link>
-        </CardActions>
-        <CardTitle large><Typography style={{ textAlign: 'center' }} use="display2">{item.data.title}</Typography></CardTitle>
-        <CardSubtitle />
-      </CardPrimary>
-      <CardSupportingText>
+      <CardPrimaryAction>
+        <DocImage src={item.data.image} />
+      </CardPrimaryAction>
+      <Typography style={{ textAlign: 'center' }} use="display2">{item.data.title}</Typography>
+      <Typography style={{ padding: '30px' }}>
         <div dangerouslySetInnerHTML={{ __html: item.contents }} />
-      </CardSupportingText>
+      </Typography>
+      <CardActions>
+        <Link tag="a" className="mdc-button mdc-button--stroked mdc-theme--primary mdc-ripple-upgraded" to={returnUri}>{'<'} Back</Link>
+      </CardActions>
     </Card>
   </GridCell>
 ))
