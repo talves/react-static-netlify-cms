@@ -35,6 +35,13 @@
       "route": "/about",
       "link": "/about/",
       "display": true
+    },
+    {
+      "name": "Admin",
+      "componentName": "Admin",
+      "route": "/admin",
+      "link": "/admin/",
+      "display": true
     }
   ]
 }

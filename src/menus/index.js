@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link, Route } from 'react-static'
 
 import Home, { router as homeRouter } from '../containers/Home'
+import Admin, { router as adminRouter } from '../containers/Admin'
 import About, { router as aboutRouter } from '../containers/About'
 import Blog, { router as blogRouter } from '../containers/Blog'
 import Docs, { router as docsRouter } from '../containers/Docs'
@@ -11,9 +12,10 @@ import ThemeColors, { router as themesRouter } from '../containers/ThemeColors'
 import config from './config.json'
 import documentation from '../data/docs.json'
 
-const components = { Home, About, Blog, ThemeColors, Docs }
+const components = { Home, Admin, About, Blog, ThemeColors, Docs }
 const routers = {
   Home: { router: homeRouter },
+  Admin: { router: adminRouter },
   About: { router: aboutRouter },
   Blog: { router: blogRouter },
   Docs: { router: docsRouter },

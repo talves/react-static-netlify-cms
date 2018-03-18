@@ -4,7 +4,6 @@ import { GridCell } from 'rmwc/Grid'
 import {
   Card,
   CardPrimaryAction,
-  CardSubtitle,
   CardActions,
 } from 'rmwc/Card'
 import { Typography } from 'rmwc/Typography'

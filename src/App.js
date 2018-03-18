@@ -23,6 +23,7 @@ export default () => (
           <Route component={NotFound} />
         </Switch>
       </div>
+      <div id="no-auto" />
     </div>
   </Router>
 )
