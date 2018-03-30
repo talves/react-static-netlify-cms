@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: talves/react-static-netlify-cms
   branch: master # Branch to update (optional; defaults to master)
   
 display_url: https://react-static-cms.netlify.com

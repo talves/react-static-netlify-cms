@@ -1,5 +1,5 @@
 import React from 'react'
-// import { init, reset, registry } from 'netlify-cms/dist/cms'
+import './setup.js'
 import 'netlify-cms/dist/cms.css'
 //
 import DocumentPreview from './components/DocumentPreview'
@@ -10,18 +10,16 @@ let path = '/admin'
 export default class Admin extends React.Component {
   constructor(props) {
     super(props)
+    const CMSExport = require('netlify-cms')
+    const CMS = CMSExport.default
+    CMS.init = CMSExport.init
+    console.log('CMS stored in state of component Admin', CMS)
     this.state = {
-      cms: require('netlify-cms/dist/cms')
+      CMS,
     }
-    console.log('CMS stored in state of component Admin')
-  }
-  componentDidMount () {
-    const { cms } = this.state
-    console.log('CMS', cms)
-    cms.init({ config })
-    cms.registry.registerPreviewStyle('/admin/site.css')
-    cms.registry.registerPreviewTemplate('docs', DocumentPreview)
-    cms.registry.registerEditorComponent({
+    CMS.registerPreviewStyle('/admin/site.css')
+    CMS.registerPreviewTemplate('docs', DocumentPreview)
+    CMS.registerEditorComponent({
       id: 'youtube',
       label: 'Youtube',
       fields: [{ name: 'id', label: 'Youtube Video ID' }],
@@ -33,10 +31,10 @@ export default class Admin extends React.Component {
       toPreview: obj => `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube Video"/>`,
     })
   }
-  componentWillUnmount () {
-    const { cms } = this.state
-    console.log('Admin componentWillUnmount')
-    cms.reset()
+  componentDidMount () {
+    const { CMS } = this.state
+    CMS.init({ config })
+    console.log('componentDidMount')
   }
   render () {
     return (

@@ -1,6 +1,7 @@
 {
   "backend": {
-    "name": "git-gateway",
+    "name": "github",
+    "repo": "talves/react-static-netlify-cms",
     "branch": "master"
   },
   "display_url": "https://react-static-cms.netlify.com",
